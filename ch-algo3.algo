@@ -1,0 +1,89 @@
+PROCEDURE dot-product(v1,v2:arr)
+    ps:INTEGER=0;
+    i,j: INTEGER;
+BEGIN
+    FOR i FROM 0 TO v1.length STEP 1  DO
+    FOR j FROM 0 TO v2.length STEP 1  DO
+        ps= ps + v1[i] * v2[j];
+    END_FOR
+    END_FOR
+END
+
+ALGORITHM product-orthogonal 
+VAR
+arr : ARRAY_OF integer[50];
+v1,v2: arr;
+n: INTEGER; 
+BEGIN
+// saisie des valeurs du tableau
+    REPEAT
+write ("entrer un vecteur non null");
+read(n);
+    UNTIL (n>0)
+// remplissage du tableau 1
+FOR i FROM 0 TO v1.length STEP 1  DO
+    v1[i]:=n;
+END_FOR
+// remplissage du tableau 2
+FOR j FROM 0 TO v2.length STEP 1  DO
+    v2[j]:= n
+END_FOR
+// appel du procédure
+dot-product(v1,v2);
+// si ce sont orthogonaux
+IF (ps == 0) THEN
+    write ("les deux vecteurs sont orthogonaux");
+    
+    ELSE
+        write ("les deux vecteurs ne sont pas orthogonaux");
+
+END_IF
+END
+
+
+// if we use function 
+
+function dot-product(v1,v2:arr):INTEGER;
+    ps:INTEGER=0;
+    i,j: INTEGER;
+BEGIN
+    FOR i FROM 0 TO v1.length STEP 1  DO
+    FOR j FROM 0 TO v2.length STEP 1  DO
+        ps= ps + v1[i] * v2[j];
+    END_FOR
+    END_FOR
+    dot-product := ps;
+END
+ALGORITHM product-orthogonal 
+VAR
+arr : ARRAY_OF integer[50];
+v1,v2: arr;
+n: INTEGER; 
+BEGIN
+// saisie des valeurs du tableau
+    REPEAT
+write ("entrer un vecteur non null");
+read(n);
+    UNTIL (n>0)
+// remplissage du tableau 1
+FOR i FROM 0 TO v1.length STEP 1  DO
+    v1[i]:=n;
+END_FOR
+// remplissage du tableau 2
+FOR j FROM 0 TO v2.length STEP 1  DO
+    v2[j]:= n
+END_FOR
+// appel du fonction
+x := dot-product(v1,v2);
+// si ce sont orthogonaux
+IF (x == 0) THEN
+    write ("les deux vecteurs sont orthogonaux");
+    
+    ELSE
+        write ("les deux vecteurs ne sont pas orthogonaux");
+
+END_IF
+END
+END
+
+
