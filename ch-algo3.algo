@@ -4,7 +4,7 @@ PROCEDURE dot-product(v1,v2:arr)
 BEGIN
     FOR i FROM 0 TO v1.length STEP 1  DO
     FOR j FROM 0 TO v2.length STEP 1  DO
-        ps= ps + v1[i] * v2[j];
+        ps= v1[i] * v2[j];
     END_FOR
     END_FOR
 END
@@ -49,7 +49,7 @@ function dot-product(v1,v2:arr):INTEGER;
 BEGIN
     FOR i FROM 0 TO v1.length STEP 1  DO
     FOR j FROM 0 TO v2.length STEP 1  DO
-        ps= ps + v1[i] * v2[j];
+        ps= v1[i] * v2[j];
     END_FOR
     END_FOR
     dot-product := ps;
